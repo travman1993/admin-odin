@@ -9,11 +9,9 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 0px 0px;
     grid-template-areas:
-        "header header"
-        "sidebar main";
+        "sidebar nav"
+        "main" "footer";
     background-color: rgb(230, 238, 238);
 }
 
@@ -22,6 +20,8 @@ body {
     height: 100%;
     background-color: #1fb6ed;
     display: grid;
+    grid-template-columns: .8fr;
+    grid-row-end: auto;
     gap: 5px;
     justify-content: space-evenly;
 }
@@ -42,7 +42,7 @@ h1 {
     font-size: 10px;
     display: flex;
 }
-img {
+.sidebar>div>img {
     width: 20px;
     height: 20px;
     padding-top: 15px;
@@ -57,6 +57,7 @@ img {
 .top {
     grid-area: header;
     background-color: #ffffff;
+    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.671);
     display: flex;
 }
 
@@ -69,7 +70,11 @@ img {
     align-items: center;
     grid-template-columns: .2fr .1fr;
 }
-
+.searchbar>img {
+    width: 30px;
+    height: auto;
+    padding-right: 10px;
+}
 input {
     width: 300px;
     height: 25px;
@@ -82,24 +87,25 @@ input {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(1fr);
-    grid-template-rows: repeat(.2fr);
-    gap: 0px 0px;
     grid-template-areas:
         "card1 card2 card3";
     justify-content: space-between;
 }
 .alertIcon {
-    width: 10px;
-    height: 10px;
-    display: block;
-    margin-left: 120%
+    width: 20px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-left: 120px;
+
 }
 .profileIcon {
-    width: 10px;
-    height: 10px;
+    width: 40px;
+    height: 40px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
     display: block;
-    margin-left: 120%
 }
 .accountName1 {
     font-size: 13px;
@@ -109,21 +115,23 @@ input {
 .bottom {
     grid-area: main;
     background-color: #ffffff;
+    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.671);
     display: grid;
     grid-template-columns: .3fr 1fr 1.5fr;
     gap: 0px 0px;
     grid-template-areas:
-        "card1 card2 card3";
-    
+        "card1 card2 card3";   
 }
 .profileIcon2 {
-    width: 20px;
-    height: 20px;
-    display: block;
-    margin-left: 15%
+    width: 80px;
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
 }
 .profileName {
     display: grid;
+    margin-top: 30px;
 }
 .greet {
     margin-bottom: -10px;
@@ -144,3 +152,145 @@ input {
     justify-items: row;
     float: left;
 }
+
+.content {
+    grid-area: main;
+    display: grid;
+    grid-template-areas: 
+        "cardsLeft cardsRight";
+}
+
+.cardsLeft {
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-template-rows: .2fr .2fr;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.cards {
+    width: 500px;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 25px;
+    
+    grid-template-areas: 
+        "card1 card2"
+        "card3 card4"
+        "card5 card6"
+        "card7 card8";
+}
+h3 {
+    width: 130px;
+    height: 30px;
+    font-size: 15px;
+    padding-left: 10px;
+}
+h4 {
+    margin-bottom: -2px;
+}
+h5 {
+    width: 80px;
+    font-size: 10px;
+    padding-left: 3px;
+}
+.card {
+    width: 235px;
+    height: 150px;
+    background-color: white;
+    border-left: 6px solid rgb(225, 204, 49);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.889);
+    border-radius: 10px;
+    display: flex;
+    display: grid;
+    grid-template-areas: 
+        "cardTitle" 
+        "cardText"
+        "icons" "icons" "icons";
+}
+.cardText {
+    font-size: 10px;
+    padding-left: 10px;
+}
+.icons {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    float: left;
+}
+.icon>img {
+    padding: 40px;
+}
+
+.cardsRight {
+    grid-template-columns: 1fr;
+    grid-template-rows: .2fr .2fr;
+    display: grid;
+    grid-template-areas: 
+        "card1"
+        "card2"
+        "card3";
+
+}
+.card2{
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.889);
+    border-radius: 10px;
+    display: grid;
+    grid-template-areas: 
+        "cardTitle" "cardText";
+}
+
+.announcement {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .1fr .1fr;
+}
+.announcments {
+    margin-left: -40px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+
+}
+.cardTitle {
+    font-size: 15px;
+}
+
+.trending {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .2fr 1fr;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+.trender {
+    font-size: 15px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between(-10px);
+}
+.trender>img {
+    width: 40px;
+    height: 40px;
+    padding-top: 10px;
+}
+.card3 {
+    height: auto;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.889);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .1fr .1fr .1fr;
+    grid-template-areas: 
+        "img" "h5" "h6";
+}
+h6 {
+    width: 80px;
+}
+
