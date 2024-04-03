@@ -1,29 +1,29 @@
-* {
-    border: 1px solid red;
-}
-
 body {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     display: grid;
     grid-template-areas:
-        "sidebar nav"
-        "main" "footer";
+        "drawer nav nav nav"
+        "drawer content content content";
     background-color: rgb(230, 238, 238);
+    grid-template-columns: 10.07rem 1fr 1fr;
+    grid-template-rows: .49fr 0fr;
 }
 
 .sidebar {
     width: 200px;
-    height: 100%;
+    height: 100vh;
     background-color: #1fb6ed;
+    position: fixed;
     display: grid;
     grid-template-columns: .8fr;
     grid-row-end: auto;
     gap: 5px;
     justify-content: space-evenly;
+    grid-area: drawer;
 }
 h1 {
     color: white;
@@ -33,13 +33,15 @@ h1 {
 .heading {
     color: white;
     font-size: 20px;
-    padding-bottom: 30px;
+    padding-bottom: -20px;
     display: flex;
 }
 
 .menulistlist {
     color: white;
     font-size: 10px;
+    margin-bottom: -40px;
+    margin-top: -20px;
     display: flex;
 }
 .sidebar>div>img {
@@ -52,6 +54,7 @@ h1 {
 .nav {
     height: 80px;
     width: auto;
+    grid-area: nav;
 }
 
 .top {
@@ -113,7 +116,6 @@ input {
 }
 
 .bottom {
-    grid-area: main;
     background-color: #ffffff;
     box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.671);
     display: grid;
@@ -154,15 +156,16 @@ input {
 }
 
 .content {
-    grid-area: main;
+    grid-area: content;
     display: grid;
     grid-template-areas: 
         "cardsLeft cardsRight";
+    grid-template-columns: 1fr 1fr;
 }
 
 .cardsLeft {
     display: grid;
-    grid-template-columns: 2fr;
+    grid-template-columns: 1fr;
     grid-template-rows: .2fr .2fr;
     padding-left: 30px;
     padding-right: 30px;
@@ -236,6 +239,7 @@ h5 {
 
 }
 .card2{
+    padding-right: -10px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.889);
     border-radius: 10px;
@@ -245,6 +249,7 @@ h5 {
 }
 
 .announcement {
+    margin-right: 10px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: .1fr .1fr;
@@ -262,6 +267,7 @@ h5 {
 }
 
 .trending {
+    margin-right: 10px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: .2fr 1fr;
